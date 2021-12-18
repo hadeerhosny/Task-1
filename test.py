@@ -1,7 +1,9 @@
 from selenium import webdriver
-search_string = input("Input the URL or string you want to search for:")
-search_string = search_string.replace(' ', '+')
-driver = webdriver.Chrome("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe")
-for i in range(1):
-    matched_elements = browser.get("https://www.google.com/search?q=" +
-                                     search_string + "&start=" + str(i))
+from webdriver_manager.chrome import ChromeDriverManager
+
+browser = webdriver.Chrome(ChromeDriverManager().install())
+browser.get("https://www.google.com/search?q=")
+browser.find_element_by_css_selector(".gLFyf gsfi").send_keys("Z2data")
+browser.find_element_by_css_selector(".QCzoEc z1asCe MZy1Rb").click()
+browser.implicitly_wait(5)
+browser.find_element_by_css_selector(".LC20lb MBeuO DKV0Md").click()
